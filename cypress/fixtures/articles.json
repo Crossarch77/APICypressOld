@@ -1,0 +1,27 @@
+{
+    "articles": [
+        {
+            "slug": "test-slug-1",
+            "title": "Test Title 1",
+            "description": "Test Description 1",
+            "body": "Test Article 1",
+            "tagList": [
+                "Tag 1",
+                "Tag 2",
+                "Tag 3",
+                "Tag 4"
+            ],
+            "createdAt": "2024-01-27T21:52:32.682Z",
+            "updatedAt": "2024-01-27T21:52:32.682Z",
+            "favorited": false,
+            "favoritesCount": 1,
+            "author": {
+                "username": "Artem Bondar",
+                "bio": null,
+                "image": "https://storage.googleapis.com/bondar-academy-visuals/Android.png",
+                "following": false
+            }
+        }
+    ],
+    "articlesCount": 1
+}
