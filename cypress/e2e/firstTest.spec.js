@@ -30,6 +30,7 @@ describe('Test With Backend', () => {
         expect(xhr.request.body.article.body).to.equal("Test Body of the Article")
         expect(xhr.response.body.article.description).to.equal("Test Description")
       })
+      cy.get('.article-actions').contains('Delete Article').click()
   })
 
   //This test case is used to check if the fixture in beforeEach method inside "intercept" works properly.
@@ -94,10 +95,11 @@ describe('Test With Backend', () => {
         expect(xhr.request.body.article.body).to.equal("Test Body of the Article")
         expect(xhr.response.body.article.description).to.equal("Modified Description")
       })
+      cy.get('.article-actions').contains('Delete Article').click()
   })
 
   //Test Case to delete the created article.
-  it.only('deleting what was created', () => {
+  it('deleting what was created', () => {
 
     //This is a var to contain my test login creds
     // const creds = {
@@ -108,7 +110,7 @@ describe('Test With Backend', () => {
     // }
 
     //This is an API request to post my login credentials to retrieve auth token from the response body.
-    cy.loginToApp()
+    //cy.loginToApp()
     cy.get('@token').then(token => {
       const requestBody = {
         "article":{"title":"API Testing","description":"API Testing is Easy","body":"Angular is cool","tagList":["Test"]}

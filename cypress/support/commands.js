@@ -47,13 +47,13 @@ Cypress.Commands.add('headlessLogin', () => {
     .its('body').then( body => {
         const token = body.user.token
         cy.wrap(token).as('token')
-        cy.visit('/'), {
+        cy.visit('/', {
             //Request from the Window object before load.
             onBeforeLoad (win){
                 //This is setting the Local Storage which's found 
                 //in Application tab with a new pair of key/value for headless auth.
                 win.localStorage.setItem('jwtToken', token)
             }
-        }
+        })
     })
 })
